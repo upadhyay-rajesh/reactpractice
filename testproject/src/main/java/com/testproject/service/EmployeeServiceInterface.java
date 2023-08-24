@@ -10,4 +10,8 @@ public interface EmployeeServiceInterface {
 
 	List<Employee> displayAllService();
 
+	Employee displayService(String email);
+
+	String deleteService(String email);
+
 }

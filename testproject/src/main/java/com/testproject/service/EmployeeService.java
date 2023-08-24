@@ -1,6 +1,7 @@
 package com.testproject.service;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -25,6 +26,17 @@ public class EmployeeService implements EmployeeServiceInterface {
 	public List<Employee> displayAllService() {
 		// TODO Auto-generated method stub
 		return ed.findAll();
+	}
+	@Override
+	public Employee displayService(String email) {
+		Optional<Employee> e1= ed.findById(email);
+		return e1.get();
+	}
+	@Override
+	public String deleteService(String email) {
+		// TODO Auto-generated method stub
+		ed.deleteById(email);
+		return "employee deleted";
 	}
 
 }
