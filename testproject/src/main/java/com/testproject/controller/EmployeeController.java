@@ -1,7 +1,10 @@
 package com.testproject.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -19,6 +22,11 @@ public class EmployeeController {
 	@PostMapping("createProfile")
 	public Employee create(@RequestBody Employee ee) {
 		return es.createProfileService(ee);
+	}
+	
+	@GetMapping("displayAllProfile")
+	public List<Employee> displayAll(){
+		return es.displayAllService();
 	}
 
 }

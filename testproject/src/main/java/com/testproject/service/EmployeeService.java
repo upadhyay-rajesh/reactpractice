@@ -1,5 +1,7 @@
 package com.testproject.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -18,6 +20,11 @@ public class EmployeeService implements EmployeeServiceInterface {
 		ed.save(ee);
 		// TODO Auto-generated method stub
 		return ee;
+	}
+	@Override
+	public List<Employee> displayAllService() {
+		// TODO Auto-generated method stub
+		return ed.findAll();
 	}
 
 }
